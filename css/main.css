@@ -1,0 +1,77 @@
+aside {
+    position: fixed;
+    z-index: 5000;
+    bottom: 30%;
+    height: 200px;
+    width: 500px;
+    right: -480px;
+    transition: right 1s;
+    background: #b79cff;
+}
+
+#hidden{
+    display:none;
+}
+
+.toggle-button{
+    left: 0px;
+    height: 180px;
+    width: 5px;
+    background: #0000007c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.toggle-button:before{
+    content: '\00ab';
+    position: absolute;
+    transform: scale(3);
+    left: 4px;
+    top: 92px;
+    color: azure;
+}
+
+.toggle-button:hover:before{
+    color:rgb(136, 147, 147);
+}
+
+.active-toggle:before{
+    content: '\00bb';
+}
+
+.main-form{
+    position:absolute;
+    top:0;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.text-box{
+    width:450px;
+    height: 120px;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button{
+    background: #0000007c;
+    color: inherit;
+}
+
+fieldset > *{
+    margin: 2px 2px 2px 2px;
+    height: 20px;
+    width: 80px;
+}
+
+.label{
+    width: max-content;
+    margin-right:2px;
+    margin-left: 2px;
+    text-align: center;
+    margin-top: 4px;
+    color: azure;
+}

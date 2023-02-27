@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Torn Trade Chat Automation no Jquery",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Instant trade chat messaging",
 
     "permissions": [
@@ -18,7 +18,7 @@
 
     "web_accessible_resources": [
         {
-          "resources": [ "template.html", "scripts/autoChat.js"],
+          "resources": [ "template.html", "scripts/autoChat.js","assets/alarm.wav"],
           "matches": [ "https://www.torn.com/*" ]
         }
       ]

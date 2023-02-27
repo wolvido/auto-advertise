@@ -13,6 +13,21 @@ window.onload = function() {
         document.getElementsByName("chatbox2")[0].dispatchEvent(new KeyboardEvent('keyup', {bubbles:true, key:'Enter', code:"Enter", location:0, repeat:false, isComposing:false, charCode:0, keyCode:13, which:13 }));
     };
 
+    function connectionCheck(){
+        setInterval(function(){
+            let lostConnection = document.getElementsByClassName("msg right-round")[0];
+            
+            if(lostConnection === undefined){
+                console.log("running");
+            }
+            else{
+                console.log("connection lost");
+                document.querySelector('#alarm-audio').play()
+            }
+
+        }, 500);
+    };
+
     function deliverMsg(){
         let closeChatbox = document.getElementsByClassName("_close_1pskg_223");
         for (var i = closeChatbox.length - 1; i >= 0; i--)
@@ -56,12 +71,13 @@ window.onload = function() {
     
     toggle.addEventListener('click', function(){
         sidebarToggle();
+
     });
     
     let stopBtn = document.getElementById("stop");
 
     stopBtn.addEventListener('click', function(){
-
+        window.location.reload();
     });
 
     let startBtn = document.getElementById("start");
@@ -89,6 +105,8 @@ window.onload = function() {
                 deliverMsg();
             }, 60000);
         }, 5000)
+
+        connectionCheck();
 
     });
 };

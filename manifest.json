@@ -1,12 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Torn Trade Chat Automation no Jquery",
-    "version": "0.2",
+    "version": "0.21",
     "description": "Instant trade chat messaging",
-
-    "permissions": [
-      "debugger"
-    ],
 
     "content_scripts":[
         {

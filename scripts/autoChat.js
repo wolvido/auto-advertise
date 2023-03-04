@@ -14,18 +14,37 @@ window.onload = function() {
     };
 
     function connectionCheck(){
-        setInterval(function(){
-            let lostConnection = document.getElementsByClassName("msg right-round")[0];
+        let intervalCheck = setInterval(function(){
+            var disconnectMsg = document.getElementsByClassName("msg right-round")[0];
             
-            if(lostConnection === undefined){
+            if(disconnectMsg === undefined){
                 console.log("running");
             }
             else{
                 console.log("connection lost");
-                document.querySelector('#alarm-audio').play()
-            }
+                console.log("page locked");
+                document.querySelector('#alarm-audio').play();
+        
+                setTimeout(function(){
+                    document.querySelector('#alarm-audio').pause();
+                },3000);
+        
+                setInterval(function(){
+                    window.location.reload();
+                    window.stop();
+                },500)
+                
+                setInterval(function(){
+                    disconnectMsg.innerHTML = "403 detected, page locked";
+                },2000)
 
+                clearInterval(intervalCheck);
+            }
+            
         }, 500);
+
+        intervalCheck;
+
     };
 
     function deliverMsg(){
@@ -71,7 +90,6 @@ window.onload = function() {
     
     toggle.addEventListener('click', function(){
         sidebarToggle();
-
     });
     
     let stopBtn = document.getElementById("stop");
@@ -94,8 +112,8 @@ window.onload = function() {
         let timeout = minToMil+hourToMil;
 
         setTimeout(function(){
-           alert("Time Finished");
-           window.location.reload();
+            alert(hours+" hours and "+minutes+" minutes Finished");
+            window.location.reload();
         }, timeout);
 
         initialRun();

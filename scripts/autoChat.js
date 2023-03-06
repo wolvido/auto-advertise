@@ -32,7 +32,7 @@ window.onload = function() {
                 setInterval(function(){
                     window.location.reload();
                     window.stop();
-                },500)
+                },100)
                 
                 setInterval(function(){
                     disconnectMsg.innerHTML = "403 detected, page locked";

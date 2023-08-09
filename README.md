@@ -1,4 +1,4 @@
-# auto-advertise
+# torn auto-advertise script
 
 How to install:
 

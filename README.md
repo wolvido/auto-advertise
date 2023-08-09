@@ -6,4 +6,4 @@ How to install:
 
 2 - in chrome drag the folder in your extensions | in edge extensions > manage extensions > load unpacked
 
-Ez money
+3 - profit

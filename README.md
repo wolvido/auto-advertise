@@ -1,4 +1,4 @@
-# torn auto-advertise script
+# torn auto-advertise plugin
 
 How to install:
 
